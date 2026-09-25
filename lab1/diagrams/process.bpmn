@@ -6,7 +6,7 @@
     </bpmn:startEvent>
     <bpmn:task id="Activity_05amwqw" name="Указать даты и тип номера">
       <bpmn:incoming>Flow_0zvioa1</bpmn:incoming>
-      <bpmn:incoming>Flow_05ezk92</bpmn:incoming>
+      <bpmn:incoming>Flow_1loopback</bpmn:incoming>
       <bpmn:outgoing>Flow_0ufpnr1</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0zvioa1" sourceRef="StartEvent_125y9bk" targetRef="Activity_05amwqw" />
@@ -25,6 +25,10 @@
       <bpmn:incoming>Flow_0aj71es</bpmn:incoming>
       <bpmn:outgoing>Flow_05ezk92</bpmn:outgoing>
     </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_0loop">
+      <bpmn:incoming>Flow_05ezk92</bpmn:incoming>
+      <bpmn:outgoing>Flow_1loopback</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_0aj71es" name="нет" sourceRef="Gateway_0socptt" targetRef="Activity_1w82kl7" />
     <bpmn:task id="Activity_0lda30d" name="Выбрать номер и заполнить">
       <bpmn:incoming>Flow_1hpfu2y</bpmn:incoming>
@@ -70,7 +74,8 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0izfc1y" sourceRef="Activity_0c7xj82" targetRef="Event_0vbec5o" />
     <bpmn:sequenceFlow id="Flow_0te9hyt" sourceRef="Activity_0hiajfx" targetRef="Event_0vbec5o" />
-    <bpmn:sequenceFlow id="Flow_05ezk92" sourceRef="Activity_1w82kl7" targetRef="Activity_05amwqw" />
+    <bpmn:sequenceFlow id="Flow_05ezk92" sourceRef="Activity_1w82kl7" targetRef="Gateway_0loop" />
+    <bpmn:sequenceFlow id="Flow_1loopback" sourceRef="Gateway_0loop" targetRef="Activity_05amwqw" />
     <bpmn:task id="Activity_1mxw7l4" name="Предложить повторить оплату">
       <bpmn:incoming>Flow_0iew3y0</bpmn:incoming>
       <bpmn:outgoing>Flow_1j8f9rg</bpmn:outgoing>
@@ -137,6 +142,9 @@
       <bpmndi:BPMNShape id="Activity_1mxw7l4_di" bpmnElement="Activity_1mxw7l4">
         <dc:Bounds x="290" y="650" width="100" height="80" />
         <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0loop_di" bpmnElement="Gateway_0loop" isMarkerVisible="true">
+        <dc:Bounds x="235" y="155" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0zvioa1_di" bpmnElement="Flow_0zvioa1">
         <di:waypoint x="334" y="118" />
@@ -209,7 +217,11 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_05ezk92_di" bpmnElement="Flow_05ezk92">
         <di:waypoint x="210" y="230" />
-        <di:waypoint x="210" y="180" />
+        <di:waypoint x="210" y="218" />
+        <di:waypoint x="238" y="183" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1loopback_di" bpmnElement="Flow_1loopback">
+        <di:waypoint x="285" y="180" />
         <di:waypoint x="284" y="180" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0iew3y0_di" bpmnElement="Flow_0iew3y0">
