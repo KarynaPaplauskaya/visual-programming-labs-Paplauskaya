@@ -15,10 +15,10 @@ UML Activity
 ![UML Activity](diagrams/activity-uml.png)
 
 Sequence Diagram (Mermaid)
-См. файл [docs/sequence.md](docs/sequence.md)
+[docs/sequence.md](docs/sequence.md)
 
 Flowchart (Mermaid)
-См. файл [docs/flowchart.md](docs/flowchart.md)
+[docs/flowchart.md](docs/flowchart.md)
 
 Выводы
 Научилась настраивать Git-репозиторий, освоила базовые команды и работу
