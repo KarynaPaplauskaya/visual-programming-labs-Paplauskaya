@@ -1,0 +1,48 @@
+[
+    {
+        "id": "0bb9142a5e0cbffe",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "lab2/Paplauskaya/basic",
+        "payload": "Paplauskaya",
+        "payloadType": "str",
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "80b06e9a4d066f55"
+            ]
+        ]
+    },
+    {
+        "id": "80b06e9a4d066f55",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 220,
+        "wires": []
+    }
+]
