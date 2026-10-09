@@ -1,6 +1,6 @@
-# Отчёт по лабораторной работе №1
+Отчёт по лабораторной работе №1
 
-## Тема процесса
+Тема процесса
 Бронирование номера в отеле.
 
 Описание процесса
@@ -8,17 +8,13 @@
 
 Диаграммы
 
-BPMN
-![BPMN](diagrams/process-bpmn.png)
+BPMN (diagrams/process-bpmn.png)
 
-UML Activity
-![UML Activity](diagrams/activity-uml.png)
+UML Activity (diagrams/activity-uml.png)
 
-Sequence Diagram (Mermaid)
-[docs/sequence.md](docs/sequence.md)
+Sequence Diagram (Mermaid) docs/sequence.md
 
-Flowchart (Mermaid)
-[docs/flowchart.md](docs/flowchart.md)
+Flowchart (Mermaid) docs/flowchart.md
 
 Выводы
 Научилась настраивать Git-репозиторий, освоила базовые команды и работу

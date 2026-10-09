@@ -1,2 +1,1 @@
-visual-programming-labs-Paplauskaya
-Лабораторные работы по технологиям визуального программирования
+﻿# Visual Programming Labs
