@@ -1,0 +1,115 @@
+[
+    {
+        "id": "54593383370121b6",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "lab2/Paplauskaya/switch",
+        "payload": "15",
+        "payloadType": "num",
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "84553404967471f9"
+            ]
+        ]
+    },
+    {
+        "id": "d30c6a19617131b2",
+        "type": "switch",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "property": "payload.original",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 830,
+        "y": 440,
+        "wires": [
+            [
+                "49b97825ffe70283",
+                "715ace84862d6583"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "84553404967471f9",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "function 2",
+        "func": "let input = msg.payload;\nconst numbers = [1, 2, 3, 4, 5];\nlet sum = 0;\n\nfor (let i = 0; i < numbers.length; i++) {\n    sum += numbers[i];\n}\n\nif (typeof input === 'number') {\n    msg.payload = {\n        original: input,\n        sum: sum,\n        type: 'number',\n        doubled: input * 2\n    };\n} else {\n    msg.payload = {\n        original: input,\n        sum: sum,\n        type: typeof input\n    };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 440,
+        "wires": [
+            [
+                "d30c6a19617131b2"
+            ]
+        ]
+    },
+    {
+        "id": "49b97825ffe70283",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": ">10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "715ace84862d6583",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "otherwise",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 480,
+        "wires": []
+    }
+]
