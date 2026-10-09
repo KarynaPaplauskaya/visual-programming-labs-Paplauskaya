@@ -1,0 +1,31 @@
+[
+    {
+        "id": "90b7e05455322a84",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "lab2/Paplauskaya/function",
+        "payload": "42",
+        "payloadType": "num",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "598ec0318580d8da"
+            ]
+        ]
+    }
+]
