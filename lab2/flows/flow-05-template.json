@@ -1,0 +1,63 @@
+[
+    {
+        "id": "6c2b4e7271c07260",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\": \"Karyna\", \"age\": 20, \"group\": \"IVT\"}",
+        "payloadType": "json",
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "567bed60a7695614"
+            ]
+        ]
+    },
+    {
+        "id": "567bed60a7695614",
+        "type": "template",
+        "z": "1bc49b723276fc76",
+        "name": "Mustache demo",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"student\": \"{{payload.name}}\",\n    \"age\": \"{{payload.age}}\",\n    \"group\": \"{{payload.group}}\"\n}",
+        "output": "str",
+        "x": 640,
+        "y": 680,
+        "wires": [
+            [
+                "87a1b9c151bcb563"
+            ]
+        ]
+    },
+    {
+        "id": "87a1b9c151bcb563",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 680,
+        "wires": []
+    }
+]
