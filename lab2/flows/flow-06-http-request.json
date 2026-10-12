@@ -1,0 +1,72 @@
+[
+    {
+        "id": "0449beaccd5b7e5f",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 780,
+        "wires": [
+            [
+                "fd5d82a3d1acce5b"
+            ]
+        ]
+    },
+    {
+        "id": "fd5d82a3d1acce5b",
+        "type": "http request",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://catfact.ninja/fact",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 780,
+        "wires": [
+            [
+                "fa3384b5a0aea2d4"
+            ]
+        ]
+    },
+    {
+        "id": "fa3384b5a0aea2d4",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 780,
+        "wires": []
+    }
+]
