@@ -1,0 +1,148 @@
+[
+    {
+        "id": "2bb1705dfc5cabdf",
+        "type": "http in",
+        "z": "1bc49b723276fc76",
+        "name": "GET /api/text",
+        "url": "/api/text",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 370,
+        "y": 1020,
+        "wires": [
+            [
+                "8fc25a2ff408b5fb"
+            ]
+        ]
+    },
+    {
+        "id": "8fc25a2ff408b5fb",
+        "type": "template",
+        "z": "1bc49b723276fc76",
+        "name": "text response",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "Hello from Node-RED! Student: Paplauskaya",
+        "output": "str",
+        "x": 580,
+        "y": 1020,
+        "wires": [
+            [
+                "6c473dc1ea98b49c"
+            ]
+        ]
+    },
+    {
+        "id": "6c473dc1ea98b49c",
+        "type": "http response",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 800,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "994e44c767b4c839",
+        "type": "http in",
+        "z": "1bc49b723276fc76",
+        "name": "GET /api/info",
+        "url": "/api/info",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 370,
+        "y": 1080,
+        "wires": [
+            [
+                "1c9139d45f95623b"
+            ]
+        ]
+    },
+    {
+        "id": "1c9139d45f95623b",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "function 4",
+        "func": "msg.payload = {\n    app: \"Node-RED\",\n    lab: 2,\n    student: \"Paplauskaya\",\n    time: new Date().toISOString()\n};\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1080,
+        "wires": [
+            [
+                "5d6beba7b5f55465"
+            ]
+        ]
+    },
+    {
+        "id": "5d6beba7b5f55465",
+        "type": "http response",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 760,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "a660d007db7d6992",
+        "type": "http in",
+        "z": "1bc49b723276fc76",
+        "name": "GET /api/items/:id",
+        "url": "/api/items/:id",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 390,
+        "y": 1140,
+        "wires": [
+            [
+                "08bce7cdf71d8d7b"
+            ]
+        ]
+    },
+    {
+        "id": "ca476d48403527f0",
+        "type": "http response",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 800,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "08bce7cdf71d8d7b",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "function 5",
+        "func": "let id = msg.req.params.id;\nlet limit = msg.req.query.limit;\n\n// Проверка: id должен быть числом\nif (isNaN(id)) {\n    msg.statusCode = 400;\n    msg.payload = {\n        error: \"Bad Request\",\n        message: \"id must be a number\",\n        received: id\n    };\n    return msg;\n}\n\nid = Number(id);\n\n// Проверка: id должен быть в диапазоне 1..3\nif (id < 1 || id > 3) {\n    msg.statusCode = 404;\n    msg.payload = {\n        error: \"Not Found\",\n        message: \"item not found\",\n        id: id\n    };\n    return msg;\n}\n\n// Успех: возвращаем item\nmsg.statusCode = 200;\nmsg.payload = {\n    id: id,\n    name: \"Item \" + id,\n    limit: limit || \"not specified\",\n    timestamp: new Date().toISOString()\n};\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1140,
+        "wires": [
+            [
+                "ca476d48403527f0"
+            ]
+        ]
+    }
+]
