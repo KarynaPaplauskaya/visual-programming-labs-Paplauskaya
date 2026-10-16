@@ -1,0 +1,195 @@
+[
+    {
+        "id": "ef74c48699465155",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "+1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 330,
+        "y": 1960,
+        "wires": [
+            [
+                "cb74b13e6af4ec7f"
+            ]
+        ]
+    },
+    {
+        "id": "cb74b13e6af4ec7f",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "Increment",
+        "func": "// Читаем текущее значение счётчика из flow context\nlet counter = flow.get('counter') || 0;\n// Увеличиваем на величину из msg.payload\ncounter += msg.payload;\n// Сохраняем обратно\nflow.set('counter', counter);\n// Отправляем результат\nmsg.payload = { counter: counter, action: \"increment\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1960,
+        "wires": [
+            [
+                "af177f034d7c3f98"
+            ]
+        ]
+    },
+    {
+        "id": "af177f034d7c3f98",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "c68e2d2ddfac0b27",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "-1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 330,
+        "y": 2020,
+        "wires": [
+            [
+                "b33ea55f00a9eb7f"
+            ]
+        ]
+    },
+    {
+        "id": "b33ea55f00a9eb7f",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "Decrement",
+        "func": "let counter = flow.get('counter') || 0;\ncounter -= msg.payload;\nflow.set('counter', counter);\nmsg.payload = { counter: counter, action: \"decrement\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 2020,
+        "wires": [
+            [
+                "f95a18ae326ec53a"
+            ]
+        ]
+    },
+    {
+        "id": "f95a18ae326ec53a",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "861bce5b7eebdcab",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "Reset",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 330,
+        "y": 2080,
+        "wires": [
+            [
+                "a8fa8d965ec98632"
+            ]
+        ]
+    },
+    {
+        "id": "a8fa8d965ec98632",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "Reset counter",
+        "func": "flow.set('counter', 0);\nmsg.payload = { counter: 0, action: \"reset\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 2080,
+        "wires": [
+            [
+                "2b4a47e1320a2e6a"
+            ]
+        ]
+    },
+    {
+        "id": "2b4a47e1320a2e6a",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 2080,
+        "wires": []
+    }
+]
