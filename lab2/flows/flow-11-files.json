@@ -1,0 +1,129 @@
+[
+    {
+        "id": "0e760285324b60d5",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "Записать данные",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\": \"Paplauskaya\", \"lab\": 2, \"timestamp\": \"test\"}",
+        "payloadType": "json",
+        "x": 370,
+        "y": 1760,
+        "wires": [
+            [
+                "aafc9ce0a1835c33"
+            ]
+        ]
+    },
+    {
+        "id": "aafc9ce0a1835c33",
+        "type": "function",
+        "z": "1bc49b723276fc76",
+        "name": "function 10",
+        "func": "msg.payload = {\n    name: msg.payload.name,\n    lab: msg.payload.lab,\n    time: new Date().toISOString()\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 1760,
+        "wires": [
+            [
+                "0e453d165e2b0a95"
+            ]
+        ]
+    },
+    {
+        "id": "0e453d165e2b0a95",
+        "type": "file",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "filename": "/data/lab2-data.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 850,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ce2fb70bc27581b",
+        "type": "inject",
+        "z": "1bc49b723276fc76",
+        "name": "Прочитать файл",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 360,
+        "y": 1820,
+        "wires": [
+            [
+                "92c470263cf924a7"
+            ]
+        ]
+    },
+    {
+        "id": "92c470263cf924a7",
+        "type": "file in",
+        "z": "1bc49b723276fc76",
+        "name": "",
+        "filename": "/data/lab2-data.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 610,
+        "y": 1820,
+        "wires": [
+            [
+                "574ddd182ba01982"
+            ]
+        ]
+    },
+    {
+        "id": "574ddd182ba01982",
+        "type": "debug",
+        "z": "1bc49b723276fc76",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1820,
+        "wires": []
+    }
+]
