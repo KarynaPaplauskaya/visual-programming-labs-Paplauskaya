@@ -74,3 +74,28 @@ Palette Studio (https://bubble.io/home/buildguides) и изучила гайд
 Более серьёзные идеи (Data Type ColorPalette, Repeating Group с фильтром 
 по пользователю, workflow сохранения) будут реализованы в Части 4 
 при создании CRUD.
+
+## Часть 3. Ручная доработка UI
+
+### 3.1. Изменение текста заголовка
+
+В режиме Design на странице `index` изменила:
+- заголовок в хедере: «Palette Studio» → «Palettes for Designers»;
+- строку в футере: `© 2025 Palette Studio. ТВП: <Поллавская>.` → 
+  `© 2025 Palette Studio. ТВП: Paplauskaya.` 
+
+Скриншот: `screenshots/03-header.png`.
+
+### 3.2. Global variable для цвета
+
+В разделе Global → Variables создала Color Variable:
+- Name: `palette-primary`;
+- Color: `#F5F0FC`;
+- Description: «Основной цвет текста и акцентов на странице».
+
+Применила переменную к цвету текста в блоке с описанием на главной 
+странице (Property Editor → Font color → primary-color). Теперь при 
+изменении HEX в Global → Variables цвет текста обновляется 
+автоматически на всех страницах, где он используется.
+
+Скриншоты: `03-global-variable.png`, `03-global-variable-created.png`.
