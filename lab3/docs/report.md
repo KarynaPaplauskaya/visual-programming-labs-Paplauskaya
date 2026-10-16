@@ -99,3 +99,19 @@ Palette Studio (https://bubble.io/home/buildguides) и изучила гайд
 автоматически на всех страницах, где он используется.
 
 Скриншоты: `03-global-variable.png`, `03-global-variable-created.png`.
+
+### 3.3. Новый стиль
+
+В разделе Global → Styles создала новый стиль:
+- Name: `Palette Text`;
+- Element style: Text;
+- Font color: `primary-color` (Color Variable из шага 3.2).
+
+Применила стиль к текстовому блоку на главной странице через 
+Property Editor → Style → Palette Text.
+
+Стиль ссылается на переменную, а не на HEX-код: при изменении 
+`palette-primary` в Global → Variables цвет текста обновится автоматически 
+на всех элементах со стилем `Palette Text`.
+
+Скриншот: `screenshots/04-style.png`.
