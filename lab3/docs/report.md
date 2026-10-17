@@ -1,6 +1,5 @@
 # Лабораторная работа №3. Bubble
 
-
 **Тема:** Палитра цветов (Palette Studio)
 **Студент:** Поплавская Карина
 **Ссылка на dev-версию приложения:** [Palette Studio (Bubble)](https://bubble.io/page?id=palette-studio&open_chat=true&tab=Preview&name=index&ai_generated=true&type=page)
@@ -34,57 +33,42 @@
 
 ### Результат генерации
 
-Bubble AI сгенерировал приложение **Palette Studio** со структурой header + body + footer, 
-навигацией и блоком цветных свотчей. Строка «ТВП: ...» присутствует в footer.
+Bubble AI сгенерировал приложение **Palette Studio** со структурой header + body + footer, навигацией и блоком цветных свотчей. Строка «ТВП: ...» присутствует в footer.
 
-Скриншоты: `screenshots/01-prompt.png`, `screenshots/01-prompt-pages.png`.
+**Скриншоты:** 
+- [Посмотреть 01-prompt.png](./screenshots/01-prompt.png)
+- [Посмотреть 01-prompt-pages.png](./screenshots/01-prompt-pages.png)
+
+---
 
 ## Часть 2. Исследование идеи (Build Guides)
 
 ### Что изучила
 
-В личном кабинете Bubble открыла персональные Build Docs для приложения 
-Palette Studio (https://bubble.io/home/buildguides) и изучила гайд 
-**«Создание цветовой палитры»** (Color palette creation).
+В личном кабинете Bubble открыла персональные Build Docs для приложения Palette Studio (https://bubble.io/home/buildguides) и изучила гайд **«Создание цветовой палитры»** (Color palette creation).
 
 ### Что показалось полезным
 
-1. **Структура данных ColorPalette.** Bubble рекомендует создать Data Type 
-   `ColorPalette` с полями Title (text), Colors (list of text), User (User) 
-   и связанный `Color` с полями Hex Code, Color Name, Palette. Я возьму 
-   идею связи палитры с пользователем (`User = Current User`) и хранения 
-   списка цветов, но упрощу до одного Data Type `ColorPalette` — этого 
-   достаточно по требованиям лабораторной (минимум 3 поля разных типов).
-
-2. **Repeating Group с фильтром User = Current User.** В гайде показано, 
-   как вывести только палитры текущего пользователя через 
-   `Data Source = Do a search for ColorPalettes` с constraint 
-   `User = Current User`. Применю это на странице «Мои палитры» 
-   для реализации Read в CRUD.
-
-3. **Визуализация цветов через Shape.** Каждый цвет отображается 
-   квадратом с динамическим фоном. Использовала как ориентир при 
-   доработке блока свотчей на главной странице.
+1. **Структура данных ColorPalette.** Bubble рекомендует создать Data Type `ColorPalette` с полями Title (text), Colors (list of text), User (User) и связанный `Color` с полями Hex Code, Color Name, Palette. Я возьму идею связи палитры с пользователем (`User = Current User`) и хранения списка цветов, но упрощу до одного Data Type `ColorPalette` — этого достаточно по требованиям лабораторной (минимум 3 поля разных типов).
+2. **Repeating Group с фильтром User = Current User.** В гайде показано, как вывести только палитры текущего пользователя через `Data Source = Do a search for ColorPalettes` с constraint `User = Current User`. Применю это на странице «Мои палитры» для реализации Read в CRUD.
+3. **Визуализация цветов через Shape.** Каждый цвет отображается квадратом с динамическим фоном. Использовала как ориентир при доработке блока свотчей на главной странице.
 
 ### Скриншоты
 
-- `02-buildguide-1.png` — открытый гайд «Создание цветовой палитры»
-- `02-buildguide-2.png` — раздел «Данные» (структура ColorPalette и Color)
-- `02-buildguide-3.png` — раздел «Дизайн»
-- `02-buildguide-4.png` — раздел «Логика» (workflow сохранения палитры)
-- `02-buildguide-before.png` — блок свотчей на главной до доработки
-- `02-buildguide-after.png` — блок свотчей с тенями и изменённым цветом
+- [02-buildguide-1.png](./screenshots/02-buildguide-1.png) — открытый гайд «Создание цветовой палитры»
+- [02-buildguide-2.png](./screenshots/02-buildguide-2.png) — раздел «Данные» (структура ColorPalette и Color)
+- [02-buildguide-3.png](./screenshots/02-buildguide-3.png) — раздел «Дизайн»
+- [02-buildguide-4.png](./screenshots/02-buildguide-4.png) — раздел «Логика» (workflow сохранения палитры)
+- [02-buildguide-before.png](./screenshots/02-buildguide-before.png) — блок свотчей на главной до доработки
+- [02-buildguide-after.png](./screenshots/02-buildguide-after.png) — блок свотчей с тенями и изменённым цветом
 
 ### Что применила в своё приложение
 
-Применила идею визуального оформления палитр из раздела «Дизайн»: 
-добавила тени цветным свотчам и изменила цвет одного из блоков — это 
-подчёркивает, что приложение работает с цветом, и делает блок визуально 
-ближе к тому, что описан в гайде (карточки с тенями и скруглениями).
+Применила идею визуального оформления палитр из раздела «Дизайн»: добавила тени цветным свотчам и изменила цвет одного из блоков — это подчёркивает, что приложение работает с цветом, и делает блок визуально ближе к тому, что описан в гайде (карточки с тенями и скруглениями).
 
-Более серьёзные идеи (Data Type ColorPalette, Repeating Group с фильтром 
-по пользователю, workflow сохранения) будут реализованы в Части 4 
-при создании CRUD.
+Более серьёзные идеи (Data Type ColorPalette, Repeating Group с фильтром по пользователю, workflow сохранения) будут реализованы в Части 4 при создании CRUD.
+
+---
 
 ## Часть 3. Ручная доработка UI
 
@@ -92,10 +76,9 @@ Palette Studio (https://bubble.io/home/buildguides) и изучила гайд
 
 В режиме Design на странице `index` изменила:
 - заголовок в хедере: «Palette Studio» → «Palettes for Designers»;
-- строку в футере: `© 2025 Palette Studio. ТВП: <Поллавская>.` → 
-  `© 2025 Palette Studio. ТВП: Paplauskaya.` 
+- строку в футере: `© 2025 Palette Studio. ТВП: <Поллавская>.` → `© 2025 Palette Studio. ТВП: Paplauskaya.` 
 
-Скриншот: `screenshots/03-header.png`.
+**Скриншот:** [03-header.png](./screenshots/03-header.png).
 
 ### 3.2. Global variable для цвета
 
@@ -104,12 +87,11 @@ Palette Studio (https://bubble.io/home/buildguides) и изучила гайд
 - Color: `#F5F0FC`;
 - Description: «Основной цвет текста и акцентов на странице».
 
-Применила переменную к цвету текста в блоке с описанием на главной 
-странице (Property Editor → Font color → primary-color). Теперь при 
-изменении HEX в Global → Variables цвет текста обновляется 
-автоматически на всех страницах, где он используется.
+Применила переменную к цвету текста в блоке с описанием на главной странице (Property Editor → Font color → primary-color). Теперь при изменении HEX в Global → Variables цвет текста обновляется автоматически на всех страницах, где он используется.
 
-Скриншоты: `03-global-variable.png`, `03-global-variable-created.png`.
+**Скриншоты:** 
+- [03-global-variable.png](./screenshots/03-global-variable.png)
+- [03-global-variable-created.png](./screenshots/03-global-variable-created.png)
 
 ### 3.3. Новый стиль
 
@@ -118,27 +100,21 @@ Palette Studio (https://bubble.io/home/buildguides) и изучила гайд
 - Element style: Text;
 - Font color: `primary-color` (Color Variable из шага 3.2).
 
-Применила стиль к текстовому блоку на главной странице через 
-Property Editor → Style → Palette Text.
+Применила стиль к текстовому блоку на главной странице через Property Editor → Style → Palette Text.
 
-Стиль ссылается на переменную, а не на HEX-код: при изменении 
-`palette-primary` в Global → Variables цвет текста обновится автоматически 
-на всех элементах со стилем `Palette Text`.
+Стиль ссылается на переменную, а не на HEX-код: при изменении `palette-primary` в Global → Variables цвет текста обновится автоматически на всех элементах со стилем `Palette Text`.
 
-Скриншот: `screenshots/04-style.png`.
+**Скриншот:** [04-style.png](./screenshots/04-style.png).
 
 ### 3.4. Готовый компонент из библиотеки
 
-Через панель компонентов (Components) открыла библиотеку готовых блоков 
-Bubble и перетащила на главную страницу компонент **Push notifications** 
-(блок с чекбоксами и заголовком).
+Через панель компонентов (Components) открыла библиотеку готовых блоков Bubble и перетащила на главную страницу компонент **Push notifications** (блок с чекбоксами и заголовком).
 
-Настроила под свою тему: заменила текст заголовка и подписей на 
-тематические (уведомления о палитрах). Компонент унаследовал мои 
-Global Variables и стили, поэтому цвета автоматически подхватились 
-из `palette-primary`.
+Настроила под свою тему: заменила текст заголовка и подписей на тематические (уведомления о палитрах). Компонент унаследовал мои Global Variables и стили, поэтому цвета автоматически подхватились из `palette-primary`.
 
-Скриншот: `screenshots/05-component.png`.
+**Скриншот:** [05-component.png](./screenshots/05-component.png).
+
+---
 
 ## Часть 4. Data и Workflows
 
@@ -186,10 +162,8 @@ AI проанализировал уже существующую структу
 Через **App data** были добавлены/отредактированы 2–3 тестовые записи, чтобы проверить сохранение данных.
 
 **Скриншоты:** 
-- `screenshots/06-data-type.png` (поля и типы);
-- `screenshots/07-data-records.png` (записи в App data).
-
----
+- [06-data-type.png](./screenshots/06-data-type.png) (поля и типы)
+- [07-data-records.png](./screenshots/07-data-records.png) (записи в App data)
 
 ### 4.2. Workflows: реализация CRUD
 
@@ -199,19 +173,36 @@ AI проанализировал уже существующую структу
 На странице `my-palettes` настроен workflow на событие нажатия кнопки «Создать» (Create Button is clicked).
 - **Действие 1:** `Create a new thing` (Type of thing: `Палитра`). В поле `Владелец` передается `Current User`. Остальные поля (Название, Цвет 1-3, Избранная, Дата создания) заполняются из соответствующих Input-элементов формы и системного времени.
 - **Действие 2:** `Reset relevant inputs` (очистка формы после сохранения).
-- **Скриншот:** `screenshots/08-workflow-create.png`.
+**Скриншот:** [08-workflow-create.png](./screenshots/08-workflow-create.png).
 
 #### Read (Чтение)
 Вывод списка реализован через Repeating Group на странице `my-palettes`.
 - **Type of content:** `Палитра`.
 - **Data source:** `Do a search for` → `Палитра` с ограничением (constraint) `Владелец = Current User`. Это гарантирует, что пользователь видит только свои палитры.
 - Внутри ячейки данные привязаны к `Current cell's Палитра` (название и свотчи цветов).
-- **Скриншот:** `screenshots/09-workflow-read.png`.
+**Скриншот:** [09-workflow-read.png](./screenshots/09-workflow-read.png).
 
 #### Delete (Удаление)
 Внутри Repeating Group на кнопке «Удалить» настроен workflow.
 - **Действие:** `Delete a thing` (Thing to delete: `Current cell's Палитра`). Запись удаляется из базы данных.
-- **Скриншот:** `screenshots/10-workflow-delete.png`.
+**Скриншот:** [10-workflow-delete.png](./screenshots/10-workflow-delete.png).
 
 #### Update (Обновление)
-Реализовано через Popup-форму редактирования (вызывается кнопкой внутри списка). Используется действие `Make changes to a thing` для `Cell's Палитра`, где поля перезаписываются новыми значениями из Input-элементов Popup. *(Примечание: основной упор в задании сделан на Create, Read и Delete, скриншоты которых приложены).*
+Реализовано через Popup-форму редактирования (вызывается кнопкой внутри списка). Используется действие `Make changes to a thing` для `Cell's Палитра`, где поля перезаписываются новыми значениями из Input-элементов Popup.
+
+---
+
+## Какие элементы и workflows освоены
+
+- **UI:** Header, Body, Footer, Text, Button, Checkbox, Input, Repeating Group, Popup, Shape.
+- **Workflows:** `Create a new thing`, `Make changes to a thing`, `Delete a thing`, `Reset relevant inputs`, `Display data`, `Set state`.
+- **Data:** Data Types, Option Sets, Privacy Rules (ограничение видимости по Current User).
+- **Design:** Global Variables (Color), Styles, Component Library.
+
+---
+
+## Выводы
+
+В ходе выполнения лабораторной работы я освоила платформу Bubble. Самым интересным этапом была генерация каркаса с помощью AI-агента — это сильно ускоряет старт, но требует ручной доработки (как в случае с неверно распознанной фамилией). 
+
+Я научилась проектировать структуру базы данных (Data Types), настраивать права доступа (Privacy Rules) так, чтобы пользователь видел только свои записи, а также связывать UI с логикой через Workflows. Использование Global Variables (Color) и Styles позволяет легко менять дизайн в одном месте, а не бегать по всем страницам. Теперь я понимаю, как устроен полный цикл CRUD в no-code приложениях.
