@@ -9,22 +9,22 @@
 
 В рамках лабораторной работы №2 был освоен Node-RED как low-code инструмент визуального программирования. Работа выполнялась в Docker-контейнере `mynodered` с сохранением данных в volume `node-red-data`, что позволяет потокам и файлам переживать перезапуски контейнера.
 
-Реализованы следующие потоки:
+Реализованы следующие потоки (нажмите на название скриншота, чтобы открыть его):
 
-| № | Flow | Файл |
-|---|---|---|
-| 2.1 | Inject → Debug | `flow-01-inject-debug.json` |
-| 2.2 | Function node | `flow-02-function.json` |
-| 2.3 | Switch node | `flow-03-switch.json` |
-| 2.4 | Change / Set node | `flow-04-change.json` |
-| 2.5 | Template node | `flow-05-template.json` |
-| 2.6 | HTTP Request node | `flow-06-http-request.json` |
-| 2.7 | MQTT с публичным брокером | `flow-07-mqtt.json` |
-| 2.8 | GET-эндпоинты | `flow-08-endpoints.json` |
-| 2.9 | Dashboard с gauge и графиком | `flow-09-dashboard.json` |
-| 2.10 | Telegram-бот | `flow-10-telegram.json` |
-| 2.11 | Чтение и запись файла | `flow-11-files.json` |
-| 2.12 | Работа с контекстом | `flow-12-context.json` |
+| № | Flow | JSON-файл | Скриншот |
+|---|---|---|---|
+| 2.1 | Inject → Debug | `flow-01-inject-debug.json` | [01-inject-debug.png](../screenshots/01-inject-debug.png) |
+| 2.2 | Function node | `flow-02-function.json` | [02-function.png](../screenshots/02-function.png) |
+| 2.3 | Switch node | `flow-03-switch.json` | [03-switch.png](../screenshots/03-switch.png) |
+| 2.4 | Change / Set node | `flow-04-change.json` | [04-change.png](../screenshots/04-change.png) |
+| 2.5 | Template node | `flow-05-template.json` | [05-template.png](../screenshots/05-template.png) |
+| 2.6 | HTTP Request node | `flow-06-http-request.json` | [06-http-request.png](../screenshots/06-http-request.png) |
+| 2.7 | MQTT с публичным брокером | `flow-07-mqtt.json` | [07-mqtt.png](../screenshots/07-mqtt.png) |
+| 2.8 | GET-эндпоинты | `flow-08-endpoints.json` | [08-endpoints.png](../screenshots/08-endpoints.png) |
+| 2.9 | Dashboard с gauge и графиком | `flow-09-dashboard.json` | [09-dashboard.png](../screenshots/09-dashboard.png) |
+| 2.10 | Telegram-бот | `flow-10-telegram.json` | [10-telegram.png](../screenshots/10-telegram.png) |
+| 2.11 | Чтение и запись файла | `flow-11-files.json` | [11-files.png](../screenshots/11-files.png) |
+| 2.12 | Работа с контекстом | `flow-12-context.json` | [12-context.png](../screenshots/12-context.png) |
 
 ---
 
@@ -90,23 +90,23 @@ Welcome to Node-RED
 
 ## 5. Скриншоты всех flow
 
-Все скриншоты находятся в папке `lab2/screenshots/`:
+Все скриншоты находятся в папке `lab2/screenshots/`. Нажмите на название файла, чтобы открыть скриншот:
 
 | Файл | Что показывает |
 |---|---|
-| `00-versions.png` | Версии Node-RED и Node.js |
-| `01-inject-debug.png` | Flow 2.1 — inject → debug |
-| `02-function.png` | Flow 2.2 — function node |
-| `03-switch.png` | Flow 2.3 — switch node |
-| `04-change.png` | Flow 2.4 — change node |
-| `05-template.png` | Flow 2.5 — template node |
-| `06-http-request.png` | Flow 2.6 — http request |
-| `07-mqtt.png` | Flow 2.7 — MQTT publish/subscribe |
-| `08-endpoints-*.png` | Flow 2.8 — GET-эндпоинты (несколько скриншотов) |
-| `09-dashboard.png` | Flow 2.9 — dashboard (gauge + chart) |
-| `10-telegram.png` | Flow 2.10 — Telegram-бот |
-| `11-files.png` | Flow 2.11 — чтение/запись файла |
-| `12-context.png` | Flow 2.12 — работа с контекстом |
+| [00-versions.png](../screenshots/00-versions.png) | Версии Node-RED и Node.js |
+| [01-inject-debug.png](../screenshots/01-inject-debug.png) | Flow 2.1 — inject → debug |
+| [02-function.png](../screenshots/02-function.png) | Flow 2.2 — function node |
+| [03-switch.png](../screenshots/03-switch.png) | Flow 2.3 — switch node |
+| [04-change.png](../screenshots/04-change.png) | Flow 2.4 — change node |
+| [05-template.png](../screenshots/05-template.png) | Flow 2.5 — template node |
+| [06-http-request.png](../screenshots/06-http-request.png) | Flow 2.6 — http request |
+| [07-mqtt.png](../screenshots/07-mqtt.png) | Flow 2.7 — MQTT publish/subscribe |
+| [08-endpoints.png](../screenshots/08-endpoints.png) | Flow 2.8 — GET-эндпоинты |
+| [09-dashboard.png](../screenshots/09-dashboard.png) | Flow 2.9 — dashboard (gauge + chart) |
+| [10-telegram.png](../screenshots/10-telegram.png) | Flow 2.10 — Telegram-бот |
+| [11-files.png](../screenshots/11-files.png) | Flow 2.11 — чтение/запись файла |
+| [12-context.png](../screenshots/12-context.png) | Flow 2.12 — работа с контекстом |
 
 ---
 
