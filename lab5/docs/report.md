@@ -26,14 +26,14 @@
 
 ## 4. Скриншоты
 
-![Регистрация](../screenshots/01-registration.png)
-![Пустой редактор](../screenshots/02-empty-editor.png)
-![Готовый русифицированный поток](../screenshots/03-template-after-ru.png)
-![Настройка условия](../screenshots/04-condition.png)
-![Настройка переменной](../screenshots/05-variable.png)
-![Настройка HTTP-запроса](../screenshots/06-http-request.png)
-![Изменение темы](../screenshots/07-theme.png)
-![Результат диалога](../screenshots/08-result.png)
+![flow-01-registration](<../screenshots/01-registration.png>)
+![flow-02-empty-editor](<../screenshots/02-empty-editor.png>)
+![flow-03-template-after-ru](<../screenshots/03-template-after-ru.png>)
+![flow-04-condition](<../screenshots/04-condition.png>)
+![flow-05-variable](<../screenshots/05-variable.png>)
+![flow-06-http-request](<../screenshots/06-http-request.png>)
+![flow-07-theme](<../screenshots/07-theme.png>)
+![flow-08-result](<../screenshots/08-result.png>)
 
 ## 5. Описание изменений (относительно базового шаблона)
 В рамках работы над шаблоном были внесены следующие изменения:
