@@ -1,0 +1,94 @@
+{
+  "name": "achievement-9-github",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "50e50f2e-7c5b-4ce7-96a9-105f6e8292b0",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "owner": {
+          "__rl": true,
+          "value": "KarynaPaplauskaya",
+          "mode": "list",
+          "cachedResultName": "KarynaPaplauskaya",
+          "cachedResultUrl": "https://github.com/KarynaPaplauskaya"
+        }
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "d2c044aa-20e7-4221-874e-88e44864953e",
+      "name": "Get a user's repositories",
+      "webhookId": "abaacb8c-ef17-49fe-b3a9-ca18a8acf143",
+      "credentials": {
+        "githubApi": {
+          "id": "l23qDEzKhRD2uxw3",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Получаем весь список репозиториев от GitHub\nconst repos = $input.all();\n\n// Считаем их количество\nconst totalRepos = repos.length;\n\n// Берем имя владельца из первого репозитория (так как оно у всех одинаковое)\nconst ownerName = repos.length > 0 ? repos[0].json.owner.login : \"Unknown\";\n\n// Возвращаем красивый объект\nreturn [{\n  json: {\n    message: `Привет, ${ownerName}! Я нашел ${totalRepos} репозиториев. Первый из них называется: ${repos[0].json.name}`,\n    repositories: repos.map(item => item.json.name) // Создаем массив только из названий\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "b8be4034-887f-4d39-9f2f-e7131ba7f373",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get a user's repositories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a user's repositories": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "47597c54-98a0-4c26-8215-9313b0f92b2d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8695afd96c3bcd00784d98492402cf84082c6896d08f414445dc54fa8bf7e223"
+  },
+  "nodeGroups": [],
+  "id": "OmXML95PZrFdyhWx",
+  "tags": []
+}
