@@ -1,0 +1,95 @@
+{
+  "name": "flow-01-manual-set",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8ae93ba9-a52b-4dff-b27b-2b374c33a685",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a4536124-3d2d-4bd6-8e65-80debda6c135",
+              "name": "payload",
+              "value": "Paplauskaya",
+              "type": "string"
+            },
+            {
+              "id": "87ae4743-2b0a-4733-9e2f-e75685aa8ca8",
+              "name": "topic",
+              "value": "lab4/paplauskaya/basic",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "bb5a50a4-9467-487a-aa59-27bc4b730ea2",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  console.log(\"Полученные данные:\", JSON.stringify(item.json));\n}\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "e6df6f52-cc84-4d48-b9d7-bc3da161f8b9",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "da10db56-5515-40db-88a9-fea4ca5bbbf7",
+  "meta": {
+    "instanceId": "8695afd96c3bcd00784d98492402cf84082c6896d08f414445dc54fa8bf7e223"
+  },
+  "nodeGroups": [],
+  "id": "5mTzwdQN8q7KhdKH",
+  "tags": []
+}

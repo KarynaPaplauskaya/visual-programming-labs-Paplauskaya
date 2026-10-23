@@ -36,8 +36,13 @@
 Bubble AI сгенерировал приложение **Palette Studio** со структурой header + body + footer, навигацией и блоком цветных свотчей. Строка «ТВП: ...» присутствует в footer.
 
 **Скриншоты:** 
+<<<<<<< HEAD
 - [01-prompt.png](./screenshots/01-prompt.png)
 - [01-prompt-pages.png](./screenshots/01-prompt-pages.png)
+=======
+- [Посмотреть 01-prompt.png](./screenshots/01-prompt.png)
+- [Посмотреть 01-prompt-pages.png](./screenshots/01-prompt-pages.png)
+>>>>>>> 55377c1e4776efd873abf726292a496efbc394c2
 
 ---
 
@@ -76,7 +81,11 @@ Bubble AI сгенерировал приложение **Palette Studio** со 
 
 В режиме Design на странице `index` изменила:
 - заголовок в хедере: «Palette Studio» → «Palettes for Designers»;
+<<<<<<< HEAD
 - строку в футере: `© 2025 Palette Studio. ТВП: <Поплавская>.` → `© 2025 Palette Studio. ТВП: Paplauskaya.` 
+=======
+- строку в футере: `© 2025 Palette Studio. ТВП: <Поллавская>.` → `© 2025 Palette Studio. ТВП: Paplauskaya.` 
+>>>>>>> 55377c1e4776efd873abf726292a496efbc394c2
 
 **Скриншот:** [03-header.png](./screenshots/03-header.png).
 
@@ -162,8 +171,13 @@ AI проанализировал уже существующую структу
 Через **App data** были добавлены/отредактированы 2–3 тестовые записи, чтобы проверить сохранение данных.
 
 **Скриншоты:** 
+<<<<<<< HEAD
 - [06-data-type.png](./screenshots/06-data-type.png) (поля и типы);
 - [07-data-records.png](./screenshots/07-data-records.png) (записи в App data).
+=======
+- [06-data-type.png](./screenshots/06-data-type.png) (поля и типы)
+- [07-data-records.png](./screenshots/07-data-records.png) (записи в App data)
+>>>>>>> 55377c1e4776efd873abf726292a496efbc394c2
 
 ### 4.2. Workflows: реализация CRUD
 
@@ -205,4 +219,8 @@ AI проанализировал уже существующую структу
 
 В ходе выполнения лабораторной работы я освоила платформу Bubble. Самым интересным этапом была генерация каркаса с помощью AI-агента — это сильно ускоряет старт, но требует ручной доработки (как в случае с неверно распознанной фамилией). 
 
+<<<<<<< HEAD
 Я научилась проектировать структуру базы данных (Data Types), настраивать права доступа (Privacy Rules) так, чтобы пользователь видел только свои записи, а также связывать UI с логикой через Workflows. Использование Global Variables (Color) и Styles позволяет легко менять дизайн в одном месте, а не бегать по всем страницам. Теперь я понимаю, как устроен полный цикл CRUD в no-code приложениях.
+=======
+Я научилась проектировать структуру базы данных (Data Types), настраивать права доступа (Privacy Rules) так, чтобы пользователь видел только свои записи, а также связывать UI с логикой через Workflows. Использование Global Variables (Color) и Styles позволяет легко менять дизайн в одном месте, а не бегать по всем страницам. Теперь я понимаю, как устроен полный цикл CRUD в no-code приложениях.
+>>>>>>> 55377c1e4776efd873abf726292a496efbc394c2
