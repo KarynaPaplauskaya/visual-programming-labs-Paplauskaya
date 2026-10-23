@@ -37,6 +37,7 @@ n8n был успешно установлен и запущен локальн�
 ![flow-06-schedule](<../screenshots/06-schedule.png>)
 ![flow-09-redis](<../screenshots/09-redis-set-get.png>)
 ![flow-10-redis](<../screenshots/10-redis-delete-exists.png>)
+![achievement-github](<../screenshots/09-achievement-github.png>)
 
 ## Выводы
 В результате выполнения работы я научилась работать с платформой n8n. Поняла, как устроены workflow, как передаются данные между узлами (в виде JSON-объектов). 
