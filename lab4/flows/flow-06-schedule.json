@@ -1,0 +1,64 @@
+{
+  "name": "flow-06-schedule",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ef128dcf-214a-481d-96de-803643cf07bb",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Получаем текущую дату и время\nconst currentTime = new Date().toISOString();\n\n// Возвращаем объект с текущим временем\nreturn [{\n  json: {\n    current_time: currentTime,\n    message: \"Schedule triggered successfully!\"\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "8de501b9-f9e0-4dc7-bfff-d7c3fb8ab51b",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "8f8729e0-19b2-462b-a1ee-3f14bb2f9ffe",
+  "meta": {
+    "instanceId": "8695afd96c3bcd00784d98492402cf84082c6896d08f414445dc54fa8bf7e223"
+  },
+  "nodeGroups": [],
+  "id": "jgNvZf3JS3mZ1Ouc",
+  "tags": []
+}
