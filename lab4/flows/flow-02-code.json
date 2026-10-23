@@ -1,0 +1,77 @@
+{
+  "name": "flow-02-code",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2520fed4-e84c-4732-bff2-236acaa5b20a",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Объявляем массив с именами\nconst names = [\"Karina\", \"Alex\", \"Max\"];\n\n// 2. Создаем пустой массив для результатов\nlet results = [];\n\n// 3. Используем цикл for для перебора массива\nfor (let i = 0; i < names.length; i++) {\n  let currentName = names[i];\n  \n  // 4. Используем if/else для проверки длины имени\n  if (currentName.length > 4) {\n    // Создаем объект и добавляем в массив\n    results.push({ name: currentName, status: \"Long name\" });\n  } else {\n    results.push({ name: currentName, status: \"Short name\" });\n  }\n}\n\n// 5. Возвращаем объект с полем payload, как требует задание\nreturn [{\n  json: {\n    payload: results\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c864d1c5-c1c9-4a49-805a-fc7af44c3952",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "b6f00bb0-7479-484a-a8ba-2e7d894be24c",
+      "name": "No Operation, do nothing"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "ebd1d992-78e7-4176-b569-0165022b6681",
+  "meta": {
+    "instanceId": "8695afd96c3bcd00784d98492402cf84082c6896d08f414445dc54fa8bf7e223"
+  },
+  "nodeGroups": [],
+  "id": "BZeQLx6fdlCS5Hgk",
+  "tags": []
+}
